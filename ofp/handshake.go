@@ -190,6 +190,32 @@ func (e *Experimenter) ReadFrom(r io.Reader) (int64, error) {
 	return encoding.ReadFrom(r, &e.Experimenter, &e.ExpType)
 }
 
+
+// Experimenter is an experimenter message header.
+type B4NExperimenter struct {
+	// Experimenter identifier. If most significant bit is set to
+	// zero, the low-order bytes represent experimenter's IEEE OUI.
+	// Otherwise the identifier is defined by ONF.
+	Experimenter uint32
+
+	// ExpType is a experimenter message type.
+	ExpType uint32
+	Data []byte
+}
+
+// WriteTo implements io.WriterTo interface. It serializes the
+// experimenter header into the wire format.
+func (e *Experimenter) WriteTo(w io.Writer) (int64, error) {
+	return encoding.WriteTo(w, e.Experimenter, e.ExpType, e.Data)
+}
+
+// ReadFrom implements io.ReaderFrom interface. It deserializes
+// the experimenter header from the wire format.
+func (e *Experimenter) ReadFrom(r io.Reader) (int64, error) {
+	return encoding.ReadFrom(r, &e.Experimenter, &e.ExpType, &e.Data)
+}
+
+
 // ControllerRole is a role that controller wants to assume.
 type ControllerRole uint32
 
