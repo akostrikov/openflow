@@ -4,7 +4,7 @@ import (
 	"encoding/gob"
 	"testing"
 
-	"github.com/netrack/openflow/internal/encodingtest"
+	"github.com/akostrikov/openflow/internal/encodingtest"
 )
 
 func TestHello(t *testing.T) {

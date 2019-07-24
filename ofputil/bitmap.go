@@ -1,7 +1,7 @@
 package ofputil
 
 import (
-	"github.com/netrack/openflow/ofp"
+	"github.com/akostrikov/openflow/ofp"
 )
 
 // Bitmap64 returns a conjunction of two specified quartets.
