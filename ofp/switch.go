@@ -3,7 +3,7 @@ package ofp
 import (
 	"io"
 
-	"github.com/netrack/openflow/internal/encoding"
+	"github.com/akostrikov/openflow/internal/encoding"
 )
 
 // Capability represents a switch capabilities bitmap.
