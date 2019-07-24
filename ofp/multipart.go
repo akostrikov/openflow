@@ -6,7 +6,7 @@ import (
 	"io"
 	"sync"
 
-	"github.com/netrack/openflow/internal/encoding"
+	"github.com/akostrikov/openflow/internal/encoding"
 )
 
 // MultipartType defines the type of multipart request. It specifies the
