@@ -205,13 +205,13 @@ type B4NExperimenter struct {
 
 // WriteTo implements io.WriterTo interface. It serializes the
 // experimenter header into the wire format.
-func (e *Experimenter) WriteTo(w io.Writer) (int64, error) {
+func (e *B4NExperimenter) WriteTo(w io.Writer) (int64, error) {
 	return encoding.WriteTo(w, e.Experimenter, e.ExpType, e.Data)
 }
 
 // ReadFrom implements io.ReaderFrom interface. It deserializes
 // the experimenter header from the wire format.
-func (e *Experimenter) ReadFrom(r io.Reader) (int64, error) {
+func (e *B4NExperimenter) ReadFrom(r io.Reader) (int64, error) {
 	return encoding.ReadFrom(r, &e.Experimenter, &e.ExpType, &e.Data)
 }
 
